@@ -1,0 +1,26 @@
+SELECT * from teacher_details;
+
+-- Sum
+SELECT Sum(Salary) AS total_payroll from teacher_details;
+
+-- Average
+SELECT AVG(Salary) AS avg_salary from teacher_details;
+
+-- Maximum and Minimum
+SELECT MAX(Salary) AS Max_Salary, MIN(Salary) AS Min_Salary from teacher_details;
+
+-- Count
+SELECT COUNT(*) from teacher_details Where Gender='Female';
+SELECT COUNT(*) from teacher_details Where Gender='Male';
+
+-- GROUP BY
+Select Gender, AVG(Salary) AS avg_Salary from teacher_details
+GROUP BY Gender;
+
+Select Department, AVG(Salary) AS avg_Salary from teacher_details
+GROUP BY Department;
+
+-- Having Clause
+SELECT Department, MAX(Salary) AS Max_Salary FROM teacher_details
+GROUP BY Department
+HAVING MAX(Salary) > 50000;
